@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="hse.exam.extremeprogrammingcookbook.view.Controller"
+>
+    <stylesheets>
+        <URL value="@../styles.css" />
+    </stylesheets>
+    <top>
+        <StackPane>
+            <HBox alignment="CENTER"
+                  style="-fx-background-color: brown
+                    -fx-padding: 10px;
+                    -fx-spacing: 10px;" >
+                <Button text="Add recipe"
+                        onAction="#onAddRecipeClick"
+                />
+                <Label text="Filter by ingredient"/>
+                <ComboBox>
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Chicken"/>
+                            <String fx:value="Potato"/>
+                            <String fx:value="Banana"/>
+                            <String fx:value="Water"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+            </HBox>
+        </StackPane>
+    </top>
+    <center>
+        <StackPane style="-fx-background-color: white;">
+            <VBox alignment="CENTER"
+                  style="-fx-background-color: grey;"
+                  fx:id="recipePane">
+                <ScrollPane fx:id="scrollPane"
+                            fitToHeight="true"
+                            fitToWidth="true"
+                            prefWidth="700.0"
+                            style="-fx-background-color: brown"
+                >
+                    <HBox alignment="CENTER" style="-fx-background-color: brown">
+                        <TilePane fx:id="recipesTilePane" prefColumns="1" vgap="10"
+                                  style="-fx-background-color: #brown; -fx-padding: 1px;">
+                        </TilePane>
+                    </HBox>
+                </ScrollPane>
+            </VBox>
+            <HBox fx:id="recipeAddHBox" visible="false" alignment="CENTER">
+                <VBox fx:id="recipeAddVBox" style="-fx-background-color: green"/>
+            </HBox>
+        </StackPane>
+
+    </center>
+    <bottom>
+        <Region style="-fx-background-color: brown;" BorderPane.alignment="CENTER"/>
+    </bottom>
+</BorderPane>
