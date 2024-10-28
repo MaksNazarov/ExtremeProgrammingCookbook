@@ -20,7 +20,7 @@ public class Recipe {
         this.recipe_name = recipe_name;
     }
 
-    Recipe(String recipe_name, String description) {
+    public Recipe(String recipe_name, String description) {
         this.recipe_name = recipe_name;
         this.description = description;
     }

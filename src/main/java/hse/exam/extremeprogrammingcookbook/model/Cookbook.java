@@ -6,7 +6,7 @@ import java.util.*;
 public class Cookbook {
     private static final String recipes_file = "recipes.txt";
     private static Set<String> global_ingredients = new TreeSet<>();
-    private static Set<Recipe>recipes = new TreeSet<>(Comparator.comparing(r -> r.recipe_name));
+    private static Set<Recipe> recipes = new TreeSet<>(Comparator.comparing(r -> r.recipe_name));
 
     void addGlobalIngredient(String ingredient) {
         global_ingredients.add(ingredient);
@@ -29,16 +29,16 @@ public class Cookbook {
         return null;
     }
 
-    void addRecipe(Recipe recipe) {
+    public void addRecipe(Recipe recipe) {
         recipes.add(recipe);
     }
 
-    void makeRecipeList() {
-
+    public void makeRecipeList() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(recipes_file))) {
             for (Recipe recipe: recipes) {
                 String content = recipe.recipe_name + '\n' + recipe.description;
                 writer.write(content);
+                writer.newLine();
                 writer.newLine();
             }
             System.out.println("Recipe list created successfully.");
@@ -47,12 +47,13 @@ public class Cookbook {
         }
     }
 
-    void makeCookbookFromFile() {
+    public void makeCookbookFromFile() {
         recipes.clear();
         try (BufferedReader reader = new BufferedReader(new FileReader(recipes_file))) {
             String recipe_name, description;
             while ((recipe_name = reader.readLine()) != null) {
                 description = reader.readLine(); // Read the second line
+                reader.readLine();
                 Recipe recipe = new Recipe(recipe_name, description);
                 recipes.add(recipe);
             }
