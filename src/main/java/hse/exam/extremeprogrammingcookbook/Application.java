@@ -1,5 +1,6 @@
 package hse.exam.extremeprogrammingcookbook;
 
+import hse.exam.extremeprogrammingcookbook.view.Controller;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -11,7 +12,7 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("view/mainpage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
-        stage.setTitle("Hello!");
+        stage.setTitle("Cookbook");
         stage.setScene(scene);
         stage.show();
     }
