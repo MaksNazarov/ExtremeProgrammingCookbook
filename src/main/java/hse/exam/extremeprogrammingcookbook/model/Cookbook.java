@@ -16,10 +16,6 @@ public class Cookbook {
         return global_ingredients;
     }
 
-    public Cookbook() {
-
-    }
-
     Recipe getRecipe(String name) {
         for (Recipe recipe: recipes) {
             if (recipe.recipe_name.equals(name)) {
