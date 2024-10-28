@@ -6,6 +6,8 @@ module hse.exam.extremeprogrammingcookbook {
 
     opens hse.exam.extremeprogrammingcookbook to javafx.fxml;
     exports hse.exam.extremeprogrammingcookbook;
+
+    opens hse.exam.extremeprogrammingcookbook.view;
     exports hse.exam.extremeprogrammingcookbook.view;
-    opens hse.exam.extremeprogrammingcookbook.view to javafx.fxml;
+    exports hse.exam.extremeprogrammingcookbook.model;
 }
