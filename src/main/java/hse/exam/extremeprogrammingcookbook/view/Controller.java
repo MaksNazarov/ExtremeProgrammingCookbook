@@ -20,13 +20,7 @@ public class Controller {
     VBox recipeViewContainer = new VBox();
 
     @FXML
-    ScrollPane scrollPane = new ScrollPane();
-
-    @FXML
     HBox recipeAddContainer = new HBox();
-
-    @FXML
-    VBox recipeAddVBox = new VBox();
 
     @FXML
     TilePane recipesTilePane = new TilePane();
