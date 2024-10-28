@@ -1,4 +1,4 @@
-package hse.exam.extremeprogrammingcookbook;
+package hse.exam.extremeprogrammingcookbook.view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
