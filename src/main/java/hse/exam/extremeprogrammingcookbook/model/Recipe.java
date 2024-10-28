@@ -2,30 +2,37 @@ package hse.exam.extremeprogrammingcookbook.model;
 
 import javafx.util.Pair;
 
+import java.io.File;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class Recipe {
-    private static Set<String> ingredients;
+    private static Map<String,Integer> ingredients = new TreeMap<>();
 
-    Recipe() {
+    public File preview_image;
+    public String recipe_name;
 
+
+    Recipe(String recipe_name) {
+        this.recipe_name = recipe_name;
     }
 
-    boolean addIngredient(String ingredient) {
-        return false;
+    boolean addIngredient(String ingredient, Integer measure) {
+        return ingredients.put(ingredient, measure) == null;
     }
 
     boolean containsIngredient(String ingredient) {
-        return false;
+        return ingredients.get(ingredient) != null;
     }
 
     boolean removeIngredient(String ingredient) {
-        return false;
+        return ingredients.remove(ingredient) != null;
     }
 
-    List<Pair<String, Integer>> getIngredientList() {
-        return null;
+    Map<String, Integer> getIngredientList() {
+        return ingredients;
     }
 
 
