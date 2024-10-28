@@ -69,8 +69,8 @@
                   maxHeight="300"
                   maxWidth="200"
             >
-                <Label fx:id="singleRecipeTitle"/>
-                <Label fx:id="singleRecipeDescription"/>
+                <Label fx:id="singleRecipeTitle" style="-fx-font-weight: bold;"/>
+                <Label fx:id="singleRecipeDescription" wrapText="true"/>
             </VBox>
         </StackPane>
 
