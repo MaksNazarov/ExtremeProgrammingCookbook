@@ -49,7 +49,15 @@ public class Cookbook {
 
     void makeCookbookFromFile() {
         recipes.clear();
-
+        try (BufferedReader reader = new BufferedReader(new FileReader(recipes_file))) {
+            String recipe_name, description = null;
+            while ((recipe_name = reader.readLine()) != null) {
+                description = reader.readLine(); // Read the second line
+            }
+            Recipe recipe = new Recipe(recipe_name, description);
+        } catch (IOException e) {
+            System.err.println("Error reading the file: " + e.getMessage());
+        }
     }
 
     private void loadIngredients(String filepath) {
@@ -58,6 +66,10 @@ public class Cookbook {
 
     private void loadRecipe(String filepath) {
 
+    }
+
+    public Set<Recipe> getRecipes() {
+        return recipes;
     }
 
 }
