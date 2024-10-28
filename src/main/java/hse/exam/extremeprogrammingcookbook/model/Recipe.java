@@ -13,10 +13,16 @@ public class Recipe {
 
     public File preview_image;
     public String recipe_name;
+    public String description;
 
 
     Recipe(String recipe_name) {
         this.recipe_name = recipe_name;
+    }
+
+    Recipe(String recipe_name, String description) {
+        this.recipe_name = recipe_name;
+        this.description = description;
     }
 
     boolean addIngredient(String ingredient, Integer measure) {
