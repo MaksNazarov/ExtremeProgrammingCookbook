@@ -18,4 +18,4 @@ jobs:
           java-version: '22'
 
       - name: build and test
-        run: ./gradlew build
+        run: mvn -B clean verify
